@@ -1,0 +1,33 @@
+# action.yml
+name: 'MySQL backup to S3'
+description: 'Download MySQL Dump and upload to S3 bucket'
+inputs:
+  AWS_ACCESS_KEY:  # id of input
+    description: 'AWS Access key'
+    required: true
+  AWS_SECRET_KEY:  # id of input
+    description: 'AWS Secret Key'
+    required: true
+  AWS_REGION:
+    description: 'AWS Region'
+    required: true
+    default: ''
+  S3_BUCKET:  # id of input
+    description: 'S3 bucket to use'
+    required: true
+  S3_PATH:  # id of input
+    description: 'S3 path to store the backup'
+    required: false
+    default: '/'
+  DB_HOST:  # id of input
+    description: 'Database Host'
+    required: false
+  DB_USERNAME:  # id of input
+    description: 'Database username'
+    required: false
+  DB_PASSWORD:  # id of input
+    description: 'Database password'
+    required: false
+runs:
+  using: 'docker'
+  image: 'Dockerfile'
