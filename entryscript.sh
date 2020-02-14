@@ -14,7 +14,6 @@ S3_LATEST_LOC=$S3_BUCKET/$S3_PATH/$INPUT_NAME
 S3_DB_DUMPFILE="$INPUT_NAME-$TIME.sql.gz"
 DESTLATEST="latest.sql.gz"
 
-echo mysqldump -h $DB_HOST -u $DB_USERNAME -p$DB_PASSWORD $DB_NAME
 mysqldump -h $DB_HOST -u $DB_USERNAME -p$DB_PASSWORD $DB_NAME | gzip > ./$S3_DB_DUMPFILE
 
 # Upload tar to s3
