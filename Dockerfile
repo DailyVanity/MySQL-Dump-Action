@@ -19,7 +19,7 @@ RUN ./awscli-bundle/install -i /usr/local/aws -b /usr/local/bin/aws
 
 RUN mkdir /working
 WORKDIR /working
-COPY entryscript.sh /entryscript.sh
-RUN chmod +x /entryscript.sh
+COPY entryscript.sh /working/entryscript.sh
+RUN chmod +x /working/entryscript.sh
 
-ENTRYPOINT [ "entryscript.sh" ]
+ENTRYPOINT [ "/working/entryscript.sh" ]
