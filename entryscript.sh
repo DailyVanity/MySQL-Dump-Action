@@ -11,7 +11,7 @@ S3_LOC="$S3_BUCKET/$S3_PATH"
 S3_DB_DUMPFILE="$INPUT_DB_NAME_$TIME.sql.gz"
 DESTLATEST="latest.sql.gz"
 
-mysqldump -h $DB_HOST -u $DB_USERNAME -p$PASSWORD --databases $DB_NAME | gzip > ./$S3_DB_DUMPFILE
+mysqldump -h $DB_HOST -u $DB_USERNAME -p$DB_PASSWORD --databases $DB_NAME | gzip > ./$S3_DB_DUMPFILE
 
 # Upload tar to s3
 export AWS_ACCESS_KEY_ID=$INPUT_AWS_ACCESS_KEY
