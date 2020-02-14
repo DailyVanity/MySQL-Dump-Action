@@ -21,13 +21,16 @@ inputs:
     default: '/'
   DB_HOST:  # id of input
     description: 'Database Host'
-    required: false
+    required: true
   DB_USERNAME:  # id of input
     description: 'Database username'
-    required: false
+    required: true
   DB_PASSWORD:  # id of input
     description: 'Database password'
-    required: false
+    required: true
+  DB_NAME:
+    description: 'Database Name'
+    required: true
 runs:
   using: 'docker'
   image: 'Dockerfile'
