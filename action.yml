@@ -31,6 +31,9 @@ inputs:
   DB_NAME:
     description: 'Database Name'
     required: true
+  NAME:
+    description: 'Name of this backup'
+    required: true
 runs:
   using: 'docker'
   image: 'Dockerfile'
