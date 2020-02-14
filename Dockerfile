@@ -21,3 +21,5 @@ RUN mkdir /working
 WORKDIR /working
 COPY entryscript.sh /entryscript.sh
 RUN chmod +x /entryscript.sh
+
+ENTRYPOINT [ "entryscript.sh" ]
